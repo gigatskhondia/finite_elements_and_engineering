@@ -1,6 +1,8 @@
-# Finite element analysis with deep learning libraries 
+# Engineering design with deep learning 
 
-This repository is an attempt to create finite element solutions (in classical sense) with deep learning libraries like tensorflow and pytorch.
+This repository is an attempt to create engineering design solutions with deep learning. The engine shall include:
+* finite element analysis (in classical sense) with deep learning libraries
+* physics-informed learning
 
 
 To keep up to date with the project please check [Gigala](https://www.facebook.com/GigaTsk) page.
