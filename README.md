@@ -1,7 +1,7 @@
  # Finite element solutions
  
-Books:
-[1] Applied Finite Element Analysis, 2nd Edition, by Larry J. Segerlind
+Books: 
+* [1] Applied Finite Element Analysis, 2nd Edition, by Larry J. Segerlind
 
 To keep up to date with the project please check [Gigala](https://www.facebook.com/GigaTsk) page.
  
