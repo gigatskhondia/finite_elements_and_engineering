@@ -1,6 +1,6 @@
-filename_mesh = 'mesh.mesh'
+filename_mesh = 'p10_2.mesh'
 
-num = 1835/(3000*5000)*200*200
+num = 1835/(3000*5000)*200*200  # sink is shared by more than one element
 
 materials = {
     'coef1': ({'val': 15},),
