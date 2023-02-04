@@ -4,13 +4,13 @@ import numpy as nm
 
 filename_mesh = 'p11_5.mesh'
 
-num = 96/(2*6)*2*0.5  # sink is shared by more than one element
+num = 96/(2*6)*2*0.5  # source is shared by more than one element
 
 materials = {
     'k': ({'val': 0.018},),
-    'coef': ({'val': 0.05},),
-    'M':({'val':0.0034},),
-    'S': ({'val': -0.017},),
+    'coef': ({'val': 0.05/num},),
+    'h':({'val':0.0034},),
+    'f': ({'val': -5},),
 }
 
 regions = {
@@ -35,16 +35,25 @@ ebcs = {
     # 't1': ('Gamma_Left', {'t.0': 200}),
     # 't2': ('Gamma_Right', {'t.0': 200}),
     # 't3': ('Gamma_Up', {'t.0': -5}),
-    't4': ('Gamma_Down', {'t.0': 0}),
+    # 't4': ('Gamma_Down', {'t.0': 0}),
 }
 
 integrals = {
     'i':  2,
 }
 
+# from sfepy.discrete.problem import Problem
+# out = Problem(name='p11_5.py').create_evaluable(expression='dw_dot.i.Gamma_Up(M.val, s, s1)')
+# equations, var = out
+# vec = var['s'].T
+# variables['s1'].set_data(vec)
+# vec_qp = Problem(name='p11_5.py').eval_equations(equations, var, mode='qp')
+
+
 equations = {
     'Temperature': """dw_laplace.i.Omega(k.val, s, t ) -
-     dw_volume_integrate.i.Source(coef.val, s) = dw_integrate.i.Gamma_Up(-M.val*t+S.val, s)""",
+     dw_volume_integrate.i.Source(coef.val, s) =
+     dw_bc_newton.i.Gamma_Up(h.val, f.val, s, t)""",
 }
 
 solvers = {
