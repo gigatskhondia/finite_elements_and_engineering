@@ -6,7 +6,7 @@ filename_mesh = 'p11_5.mesh'
 
 num = 96/(2*6)*2*0.5  # source is shared by more than one element
 h = 0.0034
-T0=-5
+T0 = -5
 
 materials = {
     'k': ({'val': 0.018},),
