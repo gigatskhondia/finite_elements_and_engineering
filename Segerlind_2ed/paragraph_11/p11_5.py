@@ -9,7 +9,7 @@ num = 96/(2*6)*2*0.5  # source is shared by more than one element
 materials = {
     'k': ({'val': 0.018},),
     'coef': ({'val': 0.05/num},),
-    'h':({'val':0.0034},),
+    'h':({'val': -0.0034},),
     'f': ({'val': -5},),
 }
 
