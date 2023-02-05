@@ -3,8 +3,8 @@ filename_mesh = 'p10_2.mesh'
 num = 1835/(3000*5000)*200*200  # sink is shared by more than one element
 
 materials = {
-    'coef1': ({'val': 15},),
-    'coef2': ({'val': 1500/num},),
+    'coef1': ({'val': 15/(24*3600)},),
+    'coef2': ({'val': 1500/num/(24*3600)},),
 }
 
 regions = {
