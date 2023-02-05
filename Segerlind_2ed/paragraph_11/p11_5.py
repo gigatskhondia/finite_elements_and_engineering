@@ -5,12 +5,14 @@ import numpy as nm
 filename_mesh = 'p11_5.mesh'
 
 num = 96/(2*6)*2*0.5  # source is shared by more than one element
-h = 0.0034
+h = 0.0034*10**4
 T0 = -5
+Q = 0.05/num*100
+kc = 0.018*100
 
 materials = {
-    'k': ({'val': 0.018},),
-    'coef': ({'val': 0.05/num},),
+    'k': ({'val': kc },),
+    'coef': ({'val': Q},),
     'h': ({'val': -h},),
     'f': ({'val': T0},),
 }
