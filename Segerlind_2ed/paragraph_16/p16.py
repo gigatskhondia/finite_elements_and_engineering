@@ -73,3 +73,7 @@ options = {
 
 # TODO - the answer is not the same as in the book
 # TODO - the left material does not see the right material
+# references:
+# https://sfepy.org/doc-devel/examples/diffusion-darcy_flow_multicomp.html
+# https://sfepy.org/doc-devel/src/sfepy/terms/terms_dot.html
+# https://sfepy.org/doc-devel/examples/acoustics-vibro_acoustic3d.html
