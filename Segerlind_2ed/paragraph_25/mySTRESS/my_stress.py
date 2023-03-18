@@ -4,8 +4,7 @@ filename_mesh = 'my_stress.mesh'
 
 materials = {
     'solid': ({'D': stiffness_from_youngpoisson_mixed(dim=2, young=20e6, poisson=0.25, plane='stress')},),
-    'load1': ({'.coef1': [0,  -150000]},),
-    'load2': ({'.coef2': [0,  -150000]},),
+    'load': ({'.coef': [0,  -150000]},),
 }
 
 regions = {
@@ -37,8 +36,8 @@ integrals = {
 }
 
 equations = {
-     'balance_of_forces' : """dw_lin_elastic.i.Omega(solid.D, v, u) = dw_point_load.i0.Top1(load1.coef1, v)
-    + dw_point_load.i0.Top2(load2.coef2, v)""",
+     'balance_of_forces' : """dw_lin_elastic.i.Omega(solid.D, v, u) = dw_point_load.i0.Top1(load.coef, v)
+    + dw_point_load.i0.Top2(load.coef, v)""",
 }
 
 solvers = {
