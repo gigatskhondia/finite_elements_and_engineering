@@ -47,9 +47,6 @@ variables = {
 
 ebcs = {
     't1': ('InCircle', {'t.0': 140}),
-    # 't2': ('Gamma_Right', {'t.0': 200}),
-    # 't3': ('Gamma_Up', {'t.0': -5}),
-    # 't4': ('Gamma_Down', {'t.0': 0}),
 }
 
 integrals = {
