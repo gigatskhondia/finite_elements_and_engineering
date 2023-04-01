@@ -1,18 +1,36 @@
+import numpy as np
+
 filename_mesh = 'p10_2.mesh'
 
-num = 1835/(3000*5000)*200*200  # sink is shared by more than one element
+num = 1835/(3000*5000)*200*200  # sink is shared by more than one vertices
 
 materials = {
-    'coef1': ({'val': 15/(24*3600)},),
-    'coef2': ({'val': 1500/num/(24*3600)},),
+    'coef1': ({'val': 15},),
+    'coef2': ({'val': 1500/num},),
+}
+
+def incline(coors, domain=None):
+    shift=1
+    
+    X=coors[:,0]
+    Y=coors[:,1]
+    
+    y = -1/2*coors[:,0] + 4500-shift
+    
+    return np.where(Y>y)[0]
+
+
+functions = {
+    'my_incline' : (incline,),
 }
 
 regions = {
     'Omega' : 'all', 
     'Gamma_Left': ('vertices in (x < 0.00001)', 'facet'),
-    'Gamma_Right': ('vertices in (x > 4999.99999)', 'facet'),
+    'Gamma_Right': ('vertices in (x > 4999.99999)&(y<1999.1)', 'facet'),
     'Gamma_Down': ('vertices in (y < 0.00001)', 'facet'),
-    'Gamma_Up': ('vertices in (y > 2999.99999)', 'facet'),
+    'Gamma_Up': ('vertices in (y > 2999.99999)&(x<2999.1)', 'facet'),
+    'Gamma_Inc': ('vertices by my_incline', 'facet'),
     # 'Sink': 'cell 20',
     'Sink': 'vertices in (y > 1400)&(y<1600)&(x>1900)&(x<2100)',
 }
@@ -29,8 +47,9 @@ variables = {
 ebcs = {
     't1': ('Gamma_Left', {'t.0': 200}),
     't2': ('Gamma_Right', {'t.0': 200}),
-    't3': ('Gamma_Up', {'t.0': 0}),
-    't4': ('Gamma_Down', {'t.0': 0}),
+#     't3': ('Gamma_Up', {'t.0': 0}),
+#     't4': ('Gamma_Down', {'t.0': 0}),
+#     't5': ('Gamma_Inc', {'t.0': 0}),
 }
 
 integrals = {
@@ -38,8 +57,8 @@ integrals = {
 }
 
 equations = {
-    'Temperature': """dw_laplace.i.Omega(coef1.val, s, t ) +
-     dw_volume_integrate.i.Sink(coef2.val, s) = 0""",
+    'Temperature': """dw_laplace.i.Omega(coef1.val, s, t ) + 
+    dw_volume_integrate.i.Sink(coef2.val, s) = 0""",
 }
 
 solvers = {
@@ -54,6 +73,7 @@ solvers = {
 options = {
     'nls' : 'newton',
     'ls' : 'ls',
+    'refinement_level' : 0,
 }
 
 
