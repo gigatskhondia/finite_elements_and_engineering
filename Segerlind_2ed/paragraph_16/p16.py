@@ -14,29 +14,18 @@ materials = {
 
 
 def incline(coors, domain=None):
-    shift=1
-    
-    X=coors[:,0]
-    Y=coors[:,1]
-    
-    y = -1/2*coors[:,0] + 4500-shift
-    
-    return np.where(Y>y)[0]
-
-
-
-def incline(coors, domain=None):
     shift=0.5
-    
+
     X=coors[:,0]
     Y=coors[:,1]
     
-    y = -2*coors[:,0] + 45-shift
+    y = -2*X + 45-shift
     
     return np.where(Y>y)[0]
+
 
 functions = {
-    'my_incline' : (incline,),
+    'my_incline': (incline,),
 }
 
 
@@ -90,8 +79,8 @@ solvers = {
 }
 
 options = {
-    'nls' : 'newton',
-    'ls' : 'ls',
+    'nls': 'newton',
+    'ls': 'ls',
 }
 
-# TODO - the answer is not the same as in the book, although on the same order of magnitude 
+# TODO - the answer is not the same as in the book, although on the same order of magnitude

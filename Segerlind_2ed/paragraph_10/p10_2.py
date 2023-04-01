@@ -9,19 +9,20 @@ materials = {
     'coef2': ({'val': 1500/num},),
 }
 
+
 def incline(coors, domain=None):
     shift=1
     
     X=coors[:,0]
     Y=coors[:,1]
     
-    y = -1/2*coors[:,0] + 4500-shift
+    y = -1/2*X + 4500-shift
     
     return np.where(Y>y)[0]
 
 
 functions = {
-    'my_incline' : (incline,),
+    'my_incline': (incline,),
 }
 
 regions = {
