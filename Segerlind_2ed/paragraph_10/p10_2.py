@@ -2,7 +2,7 @@ import numpy as np
 
 filename_mesh = 'p10_2.mesh'
 
-num = 1835/(3000*5000)*200*200  # sink is shared by more than one vertices
+num = 1835/(3000*5000-2000*1000/2)*200*200  # sink is shared by more than one vertices
 
 materials = {
     'coef1': ({'val': 15},),
