@@ -1,4 +1,4 @@
- # Finite element solutions
+ # Finite element solutions and engineering
  
 Resources: 
 1. Applied Finite Element Analysis, 2nd Edition, Larry J. Segerlind
