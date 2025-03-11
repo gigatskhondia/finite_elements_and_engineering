@@ -1,6 +1,6 @@
- # Finite elements and engineering solutions to the problems in cool classical textbooks 
+ # Finite elements and engineering solutions to the problems in some classical textbooks 
 
-In this repo you can find my solutions to the problems of cool old-school hard-core textbooks in finite element methods and engineering (implemented in Python). 
+In this repo you can find my solutions to the problems of some old-school hard-core textbooks in finite element methods and engineering (implemented in Python). 
  
 Solution for the following sources are covered: 
 1. Applied Finite Element Analysis, 2nd Edition, Larry J. Segerlind
