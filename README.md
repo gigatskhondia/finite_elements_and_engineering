@@ -1,4 +1,4 @@
- # Finite elements and engineering solutions to the problems in some classical textbooks 
+ # Finite elements and engineering solutions 
 
 In this repo you can find my solutions to the problems of some old-school hard-core textbooks in finite element methods and engineering (implemented in Python). 
  
