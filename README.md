@@ -7,6 +7,7 @@ Solution for the following sources are covered:
 2. [Python and Finite Element Methods: A Match Made in Heaven?](https://gigatskhondia.medium.com/python-and-finite-element-methods-a-match-made-in-heaven-ee2ed7ca14ee)
 3. Finite Element Procedures, by Klaus-Jürgen Bathe (in progress)
 4. Dynamics of Offshore Structures, Wilson
+5. [Modelling Ocean Thermal Energy Conversion pipe’s deployment from a barge](https://gigatskhondia.medium.com/modelling-ocean-thermal-energy-conversion-pipes-deployment-from-a-barge-2eb6d082ec6d)
 
 To keep up to date with the project please check [Gigala](https://gigala.io/) page.
 
